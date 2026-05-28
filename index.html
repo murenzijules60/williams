@@ -1,667 +1,672 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Jules Animal Health | Quality Veterinary Drugs</title>
-  <!-- Google Fonts + Font Awesome 6 (free icons) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jules Animal Health</title>
 
-    body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f0f8ff;  /* aliceblue base background */
-      color: #1a2c1c;
-      line-height: 1.4;
-    }
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 
-    /* main containers */
-    .container {
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
+<style>
 
-    /* header / navigation */
-    .navbar {
-      background-color: white;
-      box-shadow: 0 8px 20px rgba(0, 40, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
 
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      padding: 16px 24px;
-      max-width: 1320px;
-      margin: 0 auto;
-    }
+body{
+    background:aliceblue;
+    color:#222;
+}
 
-    .logo h2 {
-      font-size: 1.7rem;
-      font-weight: 700;
-      color: #0f5c3f;
-      letter-spacing: -0.3px;
-    }
+/* HEADER */
 
-    .logo p {
-      font-size: 0.75rem;
-      font-weight: 500;
-      color: #2f7d4f;
-      margin-top: 2px;
-    }
+header{
+    width:100%;
+    background:green;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
 
-    .nav-links {
-      display: flex;
-      gap: 28px;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+.logo{
+    color:white;
+    font-size:30px;
+    font-weight:bold;
+}
 
-    .nav-links a {
-      text-decoration: none;
-      font-weight: 600;
-      color: #1f3b2c;
-      transition: 0.2s;
-      font-size: 1rem;
-    }
+.logo span{
+    color:aliceblue;
+}
 
-    .nav-links a:hover, .nav-links a.active {
-      color: #0f8b56;
-      border-bottom: 2px solid #0f8b56;
-      padding-bottom: 4px;
-    }
+nav a{
+    text-decoration:none;
+    color:white;
+    margin-left:25px;
+    font-size:17px;
+    transition:0.3s;
+}
 
-    .btn-outline-light {
-      background: transparent;
-      border: 1.5px solid #1e784c;
-      padding: 8px 20px;
-      border-radius: 40px;
-      font-weight: 600;
-      color: #1e784c;
-      transition: 0.2s;
-    }
+nav a:hover{
+    color:aliceblue;
+}
 
-    .btn-outline-light:hover {
-      background: #1e784c;
-      color: white;
-    }
+.icons{
+    display:flex;
+    gap:20px;
+    color:white;
+    font-size:22px;
+    cursor:pointer;
+    position:relative;
+}
 
-    /* hero section — green & aliceblue mix */
-    .hero {
-      background: linear-gradient(115deg, #e9f9ef 0%, #f0faff 100%);
-      padding: 60px 0 70px;
-      border-bottom: 1px solid #cfe5d4;
-    }
+.cart-count{
+    position:absolute;
+    top:-10px;
+    right:10px;
+    background:red;
+    color:white;
+    width:22px;
+    height:22px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:13px;
+}
 
-    .hero-grid {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 40px;
-    }
+/* HERO */
 
-    .hero-content {
-      flex: 1.2;
-    }
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:60px 7%;
+    gap:50px;
+    flex-wrap:wrap;
+}
 
-    .hero-badge {
-      background: #d9f0e3;
-      display: inline-block;
-      padding: 6px 16px;
-      border-radius: 40px;
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: #126e44;
-      margin-bottom: 20px;
-    }
+.hero-text{
+    flex:1;
+}
 
-    .hero-content h1 {
-      font-size: 3rem;
-      font-weight: 800;
-      line-height: 1.2;
-      color: #0c482f;
-      margin-bottom: 20px;
-    }
+.hero-text h1{
+    font-size:65px;
+    color:green;
+    margin-bottom:20px;
+}
 
-    .hero-content p {
-      font-size: 1.1rem;
-      color: #2c4b35;
-      max-width: 550px;
-      margin-bottom: 30px;
-      line-height: 1.5;
-    }
+.hero-text p{
+    font-size:22px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
 
-    .hero-buttons {
-      display: flex;
-      gap: 18px;
-      flex-wrap: wrap;
-    }
+.hero-text button{
+    padding:16px 40px;
+    border:none;
+    background:green;
+    color:white;
+    font-size:18px;
+    border-radius:10px;
+    cursor:pointer;
+    transition:0.3s;
+}
 
-    .btn-primar {
-      background: #0f6e45;
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.2s;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      text-decoration: none;
-    }
+.hero-text button:hover{
+    background:#005e00;
+}
 
-    .btn-primary:hover {
-      background: #0a5536;
-      transform: translateY(-2px);
-    }
+.hero-image{
+    flex:1;
+    text-align:center;
+}
 
-    
+.hero-image img{
+    width:100%;
+    max-width:550px;
+    border-radius:20px;
+}
 
-    .btn-secondary:hover {
-      background: #eefaf2;
-    }
+/* PRODUCTS */
 
-    .hero-image {
-      flex: 0.9;
-      background: white;
-      border-radius: 32px;
-      padding: 20px;
-      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
-      text-align: center;
-    }
+.products{
+    padding:80px 7%;
+}
 
-    .hero-image i {
-      font-size: 6rem;
-      color: #2c8b5e;
-    }
+.title{
+    text-align:center;
+    font-size:45px;
+    color:green;
+    margin-bottom:50px;
+}
 
-    /* categories / drugs section */
-    .section {
-      padding: 70px 0;
-    }
+.product-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:35px;
+}
 
-    .section-title {
-      text-align: center;
-      font-size: 2.2rem;
-      font-weight: 700;
-      color: #154f34;
-      margin-bottom: 12px;
-    }
+.card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
 
-    .section-sub {
-      text-align: center;
-      color: #4f735b;
-      max-width: 650px;
-      margin: 0 auto 48px auto;
-      font-size: 1rem;
-    }
+.card:hover{
+    transform:translateY(-10px);
+}
 
-    .drugs-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-      gap: 32px;
-      margin-top: 20px;
-    }
+.card img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
 
-    .drug-card {
-      background: white;
-      border-radius: 28px;
-      padding: 24px 20px;
-      transition: 0.25s ease;
-      box-shadow: 0 12px 24px -12px rgba(0, 0, 0, 0.08);
-      border: 1px solid #e2f0e6;
-      text-align: center;
-    }
+.card-content{
+    padding:25px;
+}
 
-    .drug-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 28px 32px -18px rgba(20, 80, 40, 0.2);
-      border-color: #bcddcc;
-    }
+.card-content h3{
+    color:green;
+    margin-bottom:10px;
+    font-size:25px;
+}
 
-    .drug-icon {
-      background: #e2f4ea;
-      width: 70px;
-      height: 70px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 40px;
-      margin: 0 auto 20px;
-    }
+.price{
+    font-size:22px;
+    font-weight:bold;
+    margin:15px 0;
+}
 
-    .drug-icon i {
-      font-size: 2.2rem;
-      color: #1c794c;
-    }
+.buttons{
+    display:flex;
+    gap:15px;
+    margin-top:20px;
+}
 
-    .drug-card h3 {
-      font-size: 1.45rem;
-      font-weight: 700;
-      margin-bottom: 8px;
-      color: #1f503a;
-    }
+.cart-btn{
+    flex:1;
+    padding:12px;
+    border:none;
+    background:green;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
 
-    .drug-desc {
-      font-size: 0.9rem;
-      color: #567a64;
-      margin: 12px 0;
-    }
+.buy-btn{
+    flex:1;
+    padding:12px;
+    border:none;
+    background:#222;
+    color:white;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
 
-    .price {
-      font-weight: 800;
-      font-size: 1.3rem;
-      color: #0f6e45;
-      margin: 12px 0 4px;
-    }
+/* CART SECTION */
 
-    .order-btn {
-      background: #f0f8ff;
-      border: 1px solid #b7dac8;
-      padding: 8px 18px;
-      border-radius: 32px;
-      font-weight: 600;
-      color: #126e44;
-      cursor: pointer;
-      transition: 0.2s;
-      margin-top: 10px;
-      width: 100%;
-      font-family: inherit;
-    }
+.cart-section{
+    padding:80px 7%;
+    background:white;
+}
 
-    .order-btn:hover {
-      background: #0f6e45;
-      color: white;
-      border-color: #0f6e45;
-    }
+.cart-box{
+    background:aliceblue;
+    padding:40px;
+    border-radius:20px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-    /* features / service banner (green white) */
-    .features {
-      background: #0a4c35;
-      color: white;
-    }
+.cart-item{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:20px;
+    padding:15px;
+    background:white;
+    border-radius:10px;
+}
 
-    .features-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-      text-align: center;
-    }
+.remove-btn{
+    background:red;
+    color:white;
+    border:none;
+    padding:8px 15px;
+    border-radius:6px;
+    cursor:pointer;
+}
 
-    .feature-item {
-      flex: 1;
-      min-width: 180px;
-      padding: 20px;
-    }
+.cart-total{
+    margin-top:25px;
+    font-size:28px;
+    color:green;
+    font-weight:bold;
+}
 
-    .feature-item i {
-      font-size: 2.2rem;
-      margin-bottom: 16px;
-      color: #cbf5e1;
-    }
+.checkout-btn{
+    margin-top:30px;
+    width:100%;
+    padding:18px;
+    border:none;
+    background:green;
+    color:white;
+    font-size:20px;
+    border-radius:10px;
+    cursor:pointer;
+}
 
-    .feature-item h4 {
-      font-size: 1.2rem;
-      margin-bottom: 8px;
-    }
+/* FEATURES */
 
-    /* testimonial / trust section */
-    .testimonial {
-      background: white;
-      border-radius: 40px;
-      margin: 20px 0 40px;
-      padding: 40px 30px;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
-      border: 1px solid #e1f0e7;
-    }
+.features{
+    padding:80px 7%;
+}
 
-    .testi-flex {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-      justify-content: center;
-    }
+.feature-container{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
 
-    .testi-quote {
-      max-width: 500px;
-    }
+.feature{
+    background:white;
+    padding:40px 20px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 
-    .testi-quote i {
-      font-size: 2rem;
-      color: #6fbf8e;
-      opacity: 0.6;
-      margin-bottom: 12px;
-    }
+.feature i{
+    font-size:55px;
+    color:green;
+    margin-bottom:20px;
+}
 
-    .testi-quote p {
-      font-size: 1.15rem;
-      font-style: italic;
-      color: #2c4b3a;
-      line-height: 1.4;
-    }
+.feature h3{
+    margin-bottom:15px;
+    color:green;
+}
 
-    .testi-author {
-      margin-top: 20px;
-      font-weight: 700;
-      color: #0f6e45;
-    }
+/* FOOTER */
 
-    /* footer */
-    .footer {
-      background: #0b3627;
-      color: #d9efdf;
-      padding: 48px 0 24px;
-      margin-top: 30px;
-    }
+footer{
+    background:green;
+    color:white;
+    text-align:center;
+    padding:35px;
+    margin-top:60px;
+}
 
-    .footer-grid {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 30px;
-    }
+.socials{
+    margin-top:15px;
+}
 
-    .footer-col h4 {
-      color: white;
-      margin-bottom: 18px;
-      font-size: 1.2rem;
-    }
+.socials i{
+    margin:0 10px;
+    font-size:22px;
+}
 
-    .footer-col p, .footer-col a {
-      color: #c8e0d1;
-      text-decoration: none;
-      line-height: 1.6;
-      display: block;
-      margin-bottom: 8px;
-    }
+/* RESPONSIVE */
 
-    .social-icons i {
-      font-size: 1.3rem;
-      margin-right: 15px;
-      transition: 0.2s;
-      color: white;
-    }
+@media(max-width:900px){
 
-    .copyright {
-      text-align: center;
-      margin-top: 40px;
-      padding-top: 20px;
-      border-top: 1px solid #2b5c46;
-      font-size: 0.8rem;
-    }
+.hero-text h1{
+    font-size:45px;
+}
 
-    button, .btn-primary, .btn-secondary, .order-btn {
-      cursor: pointer;
-    }
+nav{
+    display:none;
+}
 
-    @media (max-width: 800px) {
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-      .nav-links {
-        margin-top: 10px;
-        justify-content: center;
-        width: 100%;
-      }
-      .nav-container {
-        flex-direction: column;
-      }
-    }
-  </style>
+.hero{
+    text-align:center;
+}
+
+}
+
+</style>
 </head>
 <body>
 
-<!-- Navigation bar (white background) -->
-<div class="navbar">
-  <div class="nav-container">
-    <div class="logo">
-      <h2><i class="fas fa-paw"></i> Jules Animal Health</h2>
-      <p>Quality drugs for healthy herds & pets</p>
-    </div>
-    <div class="nav-links">
-      <a href="#" class="active">Home</a>
-      <a href="shop.html">Shop</a>
-      <a href="categories.html">Categories</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact</a>
-    </div>
-  </div>
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+    Jules <span>Animal Health</span>
 </div>
 
-<!-- Hero section (aliceblue + green blend) -->
+<nav>
+    <a href="#">Home</a>
+    <a href="products.html">Products</a>
+    <a href="#">Cart</a>
+    <a href="#">Checkout</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="icons">
+    <i class="fa-solid fa-cart-shopping"></i>
+    <div class="cart-count" id="cart-count">0</div>
+</div>
+
+</header>
+
+<!-- HERO -->
+
 <section class="hero">
-  <div class="container hero-grid">
-    <div class="hero-content">
-      <div class="hero-badge"><i class="fas fa-stethoscope"></i> Trusted veterinary solutions</div>
-      <h1>Quality animal drugs, delivered with care</h1>
-      <p>Jules Animal Health provides premium veterinary pharmaceuticals, supplements & health products for livestock, poultry, and companion animals. Backed by science & compassion.</p>
-      <div class="hero-buttons">
-        <a href="shop.html" class="btn-primar"><i class="fas fa-store"></i> Shop now</a>
-       
-      </div>
-    </div>
-    <div class="hero-image">
-      <i class="fas fa-capsules"></i>
-      <i class="fas fa-syringe" style="margin-left: 20px;"></i>
-      <i class="fas fa-dog" style="margin-left: 20px;"></i>
-      <p style="margin-top: 12px; font-weight: 500; color:#1f6742;">✨ 100% authentic animal health range</p>
-    </div>
-  </div>
+
+<div class="hero-text">
+
+<h1>Trusted Animal Drugs & Veterinary Products</h1>
+
+<p>
+Jules Animal Health provides quality animal medicines,
+vaccines, supplements, and veterinary products
+for farmers and pet owners.
+</p>
+
+<button>Shop Products</button>
+
+</div>
+
+<div class="hero-image">
+<img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?q=80&w=1200&auto=format&fit=crop">
+</div>
+
 </section>
 
-<!-- Featured animal drugs section (white cards, aliceblue background overall) -->
-<div class="container section">
-  <div class="section-title">🌿 Best-selling veterinary drugs</div>
-  <div class="section-sub">Effective, safe, and affordable solutions from Jules Animal Health. Trusted by farmers and vets.</div>
+<!-- PRODUCTS -->
 
-  <div class="drugs-grid" id="productsGrid">
-    <!-- product 1 -->
-    <div class="drug-card">
-      <div class="drug-icon"><img src="" alt=""></div>
-      <h3>Vetmox LA</h3>
-      <div class="drug-desc">Long-acting antibiotic for cattle, goats & sheep. Broad spectrum.</div>
-      <div class="price">$24.99 <span style="font-size:0.8rem;">/ 100ml</span></div>
-      <button class="order-btn" data-name="Vetmox LA">📦 Add to cart</button>
-    </div>
-    <!-- product 2 -->
-    <div class="drug-card">
-      <div class="drug-icon2"><img src="images.jpg" alt=""></i></div>
-      <h3>NexGard Plus</h3>
-      <div class="drug-desc">Flea, tick & worm protection for dogs. Beef-flavored chewable.</div>
-      <div class="price">$39.90 <span style="font-size:0.8rem;">/ 3 doses</span></div>
-      <button class="order-btn" data-name="NexGard Plus">📦 Add to cart</button>
-    </div>
-    <!-- product 3 -->
-    <div class="drug-card">
-      <div class="drug-icon3"><img src="download.jpg" alt=""></i></div>
-      <h3>Albendazole 10%</h3>
-      <div class="drug-desc">Oral dewormer for sheep, goats & cattle. Effective against worms.</div>
-      <div class="price">$18.50 <span style="font-size:0.8rem;">/ 250ml</span></div>
-      <button class="order-btn" data-name="Albendazole 10%">📦 Add to cart</button>
-    </div>
-    <!-- product 4 -->
-    <div class="drug-card">
-      <div class="drug-icon"><i class="fas fa-syringe"></i></div>
-      <h3>Oxytet LA</h3>
-      <div class="drug-desc">Oxytetracycline injection for respiratory & bacterial infections.</div>
-      <div class="price">$21.30 <span style="font-size:0.8rem;">/ 100ml</span></div>
-      <button class="order-btn" data-name="Oxytet LA">📦 Add to cart</button>
-    </div>
-    <!-- product 5 -->
-    <div class="drug-card">
-      <div class="drug-icon"><i class="fas fa-heartbeat"></i></div>
-      <h3>Livomin Powder</h3>
-      <div class="drug-desc">Liver tonic + multivitamin for poultry and livestock.</div>
-      <div class="price">$27.75 <span style="font-size:0.8rem;">/ 500g</span></div>
-      <button class="order-btn" data-name="Livomin Powder">📦 Add to cart</button>
-    </div>
-    <!-- product 6 -->
-    <div class="drug-card">
-      <div class="drug-icon"><i class="fas fa-cat"></i></div>
-      <h3>Revolution Plus</h3>
-      <div class="drug-desc">Topical parasite prevention for cats (fleas, ticks, heartworm).</div>
-      <div class="price">$44.99 <span style="font-size:0.8rem;">/ 3 tubes</span></div>
-      <button class="order-btn" data-name="Revolution Plus">📦 Add to cart</button>
-    </div>
-  </div>
-  <div style="text-align: center; margin-top: 40px;">
-    <a href="#" class="btn-primary" style="background: #1c7a53;"><i class="fas fa-eye"></i> View all products</a>
-  </div>
+<section class="products">
+
+<h2 class="title">Popular Products</h2>
+
+<div class="product-container">
+
+<!-- PRODUCT 1 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Dog Medicine</h3>
+
+<p>Strong and effective treatment for dogs.</p>
+
+<div class="price">$25</div>
+
+<div class="buttons">
+
+<button class="cart-btn"
+onclick="addToCart('Dog Medicine',25)">
+<i class="fa-solid fa-cart-shopping"></i>
+Add Cart
+</button>
+
+<button class="buy-btn">
+Buy Now
+</button>
+
 </div>
 
-<!-- green feature strip (background green, white text) -->
-<div class="features">
-  <div class="container features-grid">
-    <div class="feature-item">
-      <i class="fas fa-truck-fast"></i>
-      <h4>Fast delivery nationwide</h4>
-      <p>Same-day dispatch for orders before 2PM</p>
-    </div>
-    <div class="feature-item">
-      <i class="fas fa-leaf"></i>
-      <h4>Vet-approved formulas</h4>
-      <p>All drugs sourced from GMP-certified facilities</p>
-    </div>
-    <div class="feature-item">
-      <i class="fas fa-headset"></i>
-      <h4>24/7 Animal health advice</h4>
-      <p>Connect with Jules Animal Health experts</p>
-    </div>
-  </div>
 </div>
 
-<!-- testimonial + trust (white background) -->
-<div class="container">
-  <div class="testimonial">
-    <div class="testi-flex">
-      <div class="testi-quote">
-        <i class="fas fa-quote-left"></i>
-        <p>"Jules Animal Health has transformed the way we manage our dairy farm. Their dewormers and antibiotics are top quality, and delivery is always prompt. Highly recommended!"</p>
-        <div class="testi-author">— Grace U., livestock farmer</div>
-      </div>
-      <div class="testi-quote">
-        <i class="fas fa-quote-left"></i>
-        <p>"My clinic relies on Jules for essential vaccines and pet meds. Professional service, genuine products, and the team truly cares about animal wellness."</p>
-        <div class="testi-author">— Dr. K. Mutesi, veterinarian</div>
-      </div>
-    </div>
-  </div>
 </div>
 
-<!-- about jules animal health + cta -->
-<div class="container" style="margin-bottom: 30px;">
-  <div style="background: white; border-radius: 2rem; padding: 2rem; border: 1px solid #d4e8db;">
-    <div style="display: flex; flex-wrap: wrap; gap: 30px; align-items: center;">
-      <div style="flex:1">
-        <h3 style="color:#0f5c3f; font-size: 1.8rem;">🐄 Jules Animal Health</h3>
-        <p style="margin: 16px 0; color:#2f5640;">Since 2018, we've been a trusted partner for farmers, veterinarians, and pet owners across the region. Our mission is to deliver safe, effective, and affordable animal drugs while promoting responsible animal husbandry.</p>
-        <p><i class="fas fa-check-circle" style="color:#147e4e;"></i> 100% authentic medicines</p>
-        <p><i class="fas fa-check-circle" style="color:#147e4e;"></i> Free consultation on product usage</p>
-        <p><i class="fas fa-check-circle" style="color:#147e4e;"></i> Competitive wholesale pricing</p>
-      </div>
-      <div style="flex:0.8; text-align:center;">
-        <i class="fas fa-clinic-medical" style="font-size: 4rem; color: #278a5e;"></i>
-        <p style="margin-top: 10px;"><strong>📍 Kigali, Rwanda | Shipping worldwide</strong></p>
-      </div>
-    </div>
-  </div>
+<!-- PRODUCT 2 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1516467508483-a7212febe31a?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Livestock Vaccine</h3>
+
+<p>Protect cattle and livestock from diseases.</p>
+
+<div class="price">$40</div>
+
+<div class="buttons">
+
+<button class="cart-btn"
+onclick="addToCart('Livestock Vaccine',40)">
+<i class="fa-solid fa-cart-shopping"></i>
+Add Cart
+</button>
+
+<button class="buy-btn">
+Buy Now
+</button>
+
 </div>
 
-<!-- footer (green palette) -->
-<footer class="footer">
-  <div class="container footer-grid">
-    <div class="footer-col">
-      <h4>Jules Animal Health</h4>
-      <p><i class="fas fa-map-marker-alt"></i> 12 KN 4 Ave, Kigali</p>
-      <p><i class="fas fa-phone"></i> +250 788 000 123</p>
-      <p><i class="fas fa-envelope"></i> care@julesanimalhealth.com</p>
-    </div>
-    <div class="footer-col">
-      <h4>Quick links</h4>
-      <a href="#">Shop All Drugs</a>
-      <a href="#">Livestock</a>
-      <a href="#">Pets & Companion</a>
-      <a href="#">Veterinary advice</a>
-    </div>
-    <div class="footer-col">
-      <h4>Support</h4>
-      <a href="#">Shipping & returns</a>
-      <a href="#">Track order</a>
-      <a href="#">Bulk inquiry</a>
-      <a href="#">FAQs</a>
-    </div>
-    <div class="footer-col">
-      <h4>Follow us</h4>
-      <div class="social-icons">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter"></i>
-        <i class="fab fa-whatsapp"></i>
-      </div>
-      <p style="margin-top: 12px;">🐾 Healthy animals, happy farmers</p>
-    </div>
-  </div>
-  <div class="copyright">
-    <p>© 2026 Jules Animal Health — All rights reserved. Your trusted partner in animal wellness.</p>
-  </div>
+</div>
+
+</div>
+
+<!-- PRODUCT 3 -->
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Pet Supplements</h3>
+
+<p>Healthy vitamins and supplements for pets.</p>
+
+<div class="price">$18</div>
+
+<div class="buttons">
+
+<button class="cart-btn"
+onclick="addToCart('Pet Supplements',18)">
+<i class="fa-solid fa-cart-shopping"></i>
+Add Cart
+</button>
+
+<button class="buy-btn">
+Buy Now
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CART -->
+
+<section class="cart-section">
+
+<h2 class="title">Shopping Cart</h2>
+
+<div class="cart-box">
+
+<div id="cart-items">
+
+<p>Your cart is empty.</p>
+
+</div>
+
+<div class="cart-total">
+Total: $<span id="total">0</span>
+</div>
+
+<button class="checkout-btn"
+onclick="checkout()">
+Proceed To Checkout
+</button>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<h2 class="title">Why Choose Us</h2>
+
+<div class="feature-container">
+
+<div class="feature">
+<i class="fa-solid fa-truck"></i>
+<h3>Fast Delivery</h3>
+<p>Quick delivery everywhere.</p>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-shield-dog"></i>
+<h3>Trusted Products</h3>
+<p>High-quality veterinary medicines.</p>
+</div>
+
+<div class="feature">
+<i class="fa-solid fa-headset"></i>
+<h3>24/7 Support</h3>
+<p>Professional customer support anytime.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<h2>Jules Animal Health</h2>
+
+<p>
+Healthy Animals • Better Farming • Trusted Veterinary Care
+</p>
+
+<div class="socials">
+<i class="fa-brands fa-facebook"></i>
+<i class="fa-brands fa-instagram"></i>
+<i class="fa-brands fa-whatsapp"></i>
+<i class="fa-brands fa-twitter"></i>
+</div>
+
 </footer>
 
-<!-- simple toast / cart notification -->
-<div id="toastMsg" style="position:fixed; bottom:25px; right:25px; background:#154f34; color:white; padding:12px 24px; border-radius:60px; font-weight:500; z-index:1000; box-shadow:0 5px 12px rgba(0,0,0,0.2); opacity:0; transition:0.2s; pointer-events: none;"></div>
+<!-- JAVASCRIPT -->
 
 <script>
-  // interactive "Add to cart" with feedback
-  const toast = document.getElementById('toastMsg');
-  function showMessage(text, isSuccess = true) {
-    toast.style.opacity = '1';
-    toast.style.backgroundColor = '#0f6e45';
-    toast.innerHTML = `🛒 ${text} added to cart!`;
-    if(!isSuccess) toast.style.backgroundColor = '#b34e3a';
-    setTimeout(() => {
-      toast.style.opacity = '0';
-    }, 1800);
-  }
 
-  const orderBtns = document.querySelectorAll('.order-btn');
-  orderBtns.forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      const productName = btn.getAttribute('data-name') || 'item';
-      showMessage(productName);
-      // optional: you can extend with actual cart functionality
-      console.log(`Added to cart: ${productName}`);
-    });
-  });
+let cart = [];
+let total = 0;
 
-  // simple hover / any additional interactions that feel dynamic
-  const heroBtn = document.querySelector('.hero-buttons .btn-primary');
-  if(heroBtn) {
-    heroBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showMessage('Explore our full catalog', true);
+function addToCart(product, price){
+
+    cart.push({
+        product:product,
+        price:price
     });
-  }
+
+    total += price;
+
+    updateCart();
+
+}
+
+function updateCart(){
+
+    let cartItems = document.getElementById("cart-items");
+
+    let cartCount = document.getElementById("cart-count");
+
+    cartItems.innerHTML = "";
+
+    if(cart.length === 0){
+
+        cartItems.innerHTML = "<p>Your cart is empty.</p>";
+
+    }
+
+    cart.forEach((item,index)=>{
+
+        cartItems.innerHTML += `
+
+        <div class="cart-item">
+
+            <div>
+                <h3>${item.product}</h3>
+                <p>$${item.price}</p>
+            </div>
+
+            <button class="remove-btn"
+            onclick="removeItem(${index})">
+            Remove
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+    document.getElementById("total").innerText = total;
+
+    cartCount.innerText = cart.length;
+
+}
+
+function removeItem(index){
+
+    total -= cart[index].price;
+
+    cart.splice(index,1);
+
+    updateCart();
+
+}
+
+function checkout(){
+
+    if(cart.length === 0){
+
+        alert("Your cart is empty!");
+
+    }
+
+    else{
+
+        alert("Checkout Successful!");
+
+        cart = [];
+
+        total = 0;
+
+        updateCart();
+
+    }
+
+}
+
 </script>
 
-<!-- This website fully implements theme: white backgrounds, green accents and aliceblue overall backdrop.
-     All product data showcases animal drugs for selling under "Jules Animal Health".
-     Home page includes hero, product grid, features, testimonial, about brand, and footer.
-     Fully responsive and interactive. -->
 </body>
 </html>
