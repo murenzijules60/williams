@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Jules Animal Health | Contact Us – Get in Touch</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f8ff;  /* aliceblue background */
+      color: #1a2c1c;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== NAVBAR (white, green accents) ========== */
+    .navbar {
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0, 40, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 16px 24px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .logo h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #0f5c3f;
+      letter-spacing: -0.3px;
+    }
+
+    .logo p {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #2f7d4f;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1f3b2c;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #0f8b56;
+      border-bottom: 2px solid #0f8b56;
+      padding-bottom: 4px;
+    }
+
+    .cart-icon {
+      background: #eef5ea;
+      padding: 8px 14px;
+      border-radius: 40px;
+    }
+
+    /* Contact Hero */
+    .contact-hero {
+      background: linear-gradient(115deg, #e6f4ec 0%, #ffffff 100%);
+      padding: 56px 0 48px;
+      border-bottom: 1px solid #cde2d4;
+    }
+
+    .contact-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #0a4c35;
+      margin-bottom: 12px;
+    }
+
+    .contact-sub {
+      font-size: 1rem;
+      color: #3c6b53;
+      max-width: 650px;
+    }
+
+    /* contact main grid */
+    .contact-main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      margin: 60px 0 70px;
+    }
+
+    .contact-info {
+      flex: 1.1;
+      background: white;
+      border-radius: 2rem;
+      padding: 32px 28px;
+      box-shadow: 0 12px 28px -12px rgba(0,0,0,0.06);
+      border: 1px solid #e2f0e6;
+    }
+
+    .contact-info h3 {
+      font-size: 1.7rem;
+      color: #154f34;
+      margin-bottom: 20px;
+    }
+
+    .info-detail {
+      margin: 28px 0;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .info-icon {
+      background: #e6f3ec;
+      width: 52px;
+      height: 52px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      color: #1f7a52;
+    }
+
+    .info-text h4 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #1a462f;
+    }
+
+    .info-text p, .info-text a {
+      color: #4d705b;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    .info-text a:hover {
+      color: #0f6e45;
+    }
+
+    .social-links {
+      margin-top: 32px;
+      display: flex;
+      gap: 20px;
+    }
+
+    .social-links a {
+      background: #eff7f0;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: #1f7750;
+      font-size: 1.3rem;
+      transition: 0.2s;
+    }
+
+    .social-links a:hover {
+      background: #0f6e45;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    /* contact form */
+    .contact-form {
+      flex: 1.4;
+      background: white;
+      border-radius: 2rem;
+      padding: 32px 32px 40px;
+      box-shadow: 0 12px 28px -12px rgba(0,0,0,0.06);
+      border: 1px solid #e2f0e6;
+    }
+
+    .contact-form h3 {
+      font-size: 1.7rem;
+      color: #154f34;
+      margin-bottom: 8px;
+    }
+
+    .form-group {
+      margin-bottom: 22px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-bottom: 8px;
+      color: #2b5b44;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1.5px solid #ddebe0;
+      background: #fefefc;
+      font-family: 'Inter', sans-serif;
+      transition: 0.2s;
+      outline: none;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #1f8a5a;
+      box-shadow: 0 0 0 3px rgba(31, 138, 90, 0.1);
+    }
+
+    .submit-btn {
+      background: #0f6e45;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .submit-btn:hover {
+      background: #0a5536;
+      transform: translateY(-2px);
+    }
+
+    /* map & location card */
+    .map-section {
+      margin: 20px 0 60px;
+      background: white;
+      border-radius: 2rem;
+      overflow: hidden;
+      border: 1px solid #e2f0e6;
+    }
+
+    .map-container {
+      height: 320px;
+      background: #cfe1d7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      color: #2f604a;
+    }
+
+    .map-container i {
+      font-size: 3rem;
+      margin-bottom: 12px;
+    }
+
+    .business-hours {
+      padding: 28px 28px;
+      background: #fafefa;
+      border-top: 1px solid #e9f2e7;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .hours-item {
+      font-weight: 500;
+    }
+
+    /* faq accordion */
+    .faq-section {
+      background: white;
+      border-radius: 2rem;
+      padding: 40px 32px;
+      margin-bottom: 70px;
+      border: 1px solid #e2f0e6;
+    }
+
+    .faq-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 30px;
+    }
+
+    .faq-item {
+      background: #fafefb;
+      border-radius: 20px;
+      padding: 18px 24px;
+      cursor: pointer;
+      border: 1px solid #e6f0e6;
+    }
+
+    .faq-question {
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      color: #154f34;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: 0.3s ease;
+      color: #577a64;
+      padding-top: 0;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 120px;
+      padding-top: 12px;
+    }
+
+    /* footer */
+    .footer {
+      background: #0b3627;
+      color: #d9efdf;
+      padding: 48px 0 24px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 18px;
+    }
+
+    .footer-col a, .footer-col p {
+      color: #c8e0d1;
+      text-decoration: none;
+      line-height: 1.6;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #2b5c46;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 880px) {
+      .contact-main {
+        flex-direction: column;
+      }
+      .contact-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation (white background) -->
+<div class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <h2><i class="fas fa-paw"></i> Jules Animal Health</h2>
+      <p>Quality drugs for healthy herds & pets</p>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="categories.html">Categories</a>
+      <a href="about.html">About</a>
+      <a href="#" class="active">Contact</a>
+      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- contact hero -->
+<section class="contact-hero">
+  <div class="container">
+    <h1 class="contact-title">📬 Let’s talk — We’re here for you</h1>
+    <p class="contact-sub">Have a question about our animal health products? Need veterinary advice or bulk order support? Reach out to the Jules Animal Health team. We’ll respond within 24 hours.</p>
+  </div>
+</section>
+
+<div class="container">
+  <div class="contact-main">
+    <!-- left side: contact information -->
+    <div class="contact-info">
+      <h3><i class="fas fa-building"></i> Visit or reach us</h3>
+      <div class="info-detail">
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="info-text"><h4>Head Office</h4><p>KN 4 Ave, Nyarugenge, Kigali - Rwanda<br>Jules Animal Health Centre</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+          <div class="info-text"><h4>Phone / WhatsApp</h4><p><a href="tel:+250788000123">+250 788 000 123</a><br>Mon–Sat, 8am – 6pm</p></div>
+        </div>
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="info-text"><h4>Email us</h4><p><a href="mailto:care@julesanimalhealth.com">care@julesanimalhealth.com</a><br>support@julesanimalhealth.com</p></div>
+        </div>
+      </div>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-x-twitter"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+
+    <!-- right side: contact form -->
+    <div class="contact-form">
+      <h3>Send us a message</h3>
+      <p style="margin-bottom: 24px; color:#5b7b64;">Inquiries about products, deliveries, or partnerships.</p>
+      <form id="contactForm">
+        <div class="form-group">
+          <label>Full name *</label>
+          <input type="text" id="fullName" required placeholder="e.g. Grace Uwimana">
+        </div>
+        <div class="form-group">
+          <label>Email address *</label>
+          <input type="email" id="email" required placeholder="hello@example.com">
+        </div>
+        <div class="form-group">
+          <label>Phone number</label>
+          <input type="tel" id="phone" placeholder="+250 7XX XXX XXX">
+        </div>
+        <div class="form-group">
+          <label>I'm interested in *</label>
+          <select id="inquiryType">
+            <option value="product">🐄 Product inquiry</option>
+            <option value="bulk">📦 Bulk / wholesale order</option>
+            <option value="vet">🩺 Veterinary advice</option>
+            <option value="other">💬 Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message *</label>
+          <textarea rows="4" id="message" placeholder="Tell us more about your needs..."></textarea>
+        </div>
+        <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send message</button>
+      </form>
+      <div id="formFeedback" style="margin-top: 18px; font-size:0.85rem; text-align:center;"></div>
+    </div>
+  </div>
+
+  <!-- map & location card (stylized) -->
+  <div class="map-section">
+    <div class="map-container">
+      <i class="fas fa-map"></i>
+      <i class="fas fa-location-dot" style="font-size: 2rem; margin: 8px 0;"></i>
+      <p style="font-weight: 500;">📍 KN 4 Ave, Kigali – opposite Veterinary Lab</p>
+      <p style="font-size: 0.8rem;">Open for walk-in consultations & product pickup</p>
+    </div>
+    <div class="business-hours">
+      <div class="hours-item"><i class="far fa-clock"></i> Mon–Fri: 8:00 – 18:00</div>
+      <div class="hours-item"><i class="fas fa-calendar-alt"></i> Saturday: 9:00 – 15:00</div>
+      <div class="hours-item"><i class="fas fa-phone-volume"></i> Emergency helpline: +250 788 111 222</div>
+    </div>
+  </div>
+
+  <!-- FAQ accordion (common contact topics) -->
+  <div class="faq-section">
+    <h3 style="font-size: 1.7rem; color:#154f34;">❓ Frequently asked questions</h3>
+    <div class="faq-grid" id="faqContainer">
+      <div class="faq-item">
+        <div class="faq-question">Do you offer veterinary advice before purchase? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Yes! Our in-house veterinary team offers free guidance on product selection, dosage, and treatment plans. Contact us via phone or email.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How fast is delivery across Rwanda? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">We deliver within 24–48 hours in Kigali, and 2–3 business days nationwide. Express options available for urgent orders.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I order animal drugs in bulk for my farm? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">Absolutely. We provide wholesale pricing for livestock farms, cooperatives, and vet clinics. Request a quote via our contact form.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Are your products certified and safe? <i class="fas fa-chevron-down"></i></div>
+        <div class="faq-answer">All items are sourced from GMP-certified manufacturers and approved by Rwanda Agriculture and Animal Resources Board (RAB).</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col"><h4>Jules Animal Health</h4><p><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p><p><i class="fas fa-phone"></i> +250 788 000 123</p><p><i class="fas fa-envelope"></i> care@julesanimalhealth.com</p></div>
+    <div class="footer-col"><h4>Quick links</h4><a href="#">Shop</a><a href="#">Categories</a><a href="#">About us</a><a href="#">Contact</a></div>
+    <div class="footer-col"><h4>Resources</h4><a href="#">Animal health blog</a><a href="#">Delivery info</a><a href="#">Return policy</a></div>
+    <div class="footer-col"><h4>Follow us</h4><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-whatsapp"></i><p>🐾 Healthy animals, happy farmers</p></div>
+  </div>
+  <div class="copyright"><p>© 2026 Jules Animal Health — Compassion, quality, and integrity for every creature.</p></div>
+</footer>
+
+<!-- interactive JS: form submit + FAQ accordion -->
+<script>
+  // Contact form submission simulation (with validation)
+  const contactForm = document.getElementById('contactForm');
+  const feedbackDiv = document.getElementById('formFeedback');
+
+  contactForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!name || !email || !message) {
+      feedbackDiv.innerHTML = '<span style="color:#c2442b;">⚠️ Please fill in all required fields (name, email, message).</span>';
+      return;
+    }
+    if (!email.includes('@') || !email.includes('.')) {
+      feedbackDiv.innerHTML = '<span style="color:#c2442b;">⚠️ Enter a valid email address.</span>';
+      return;
+    }
+    feedbackDiv.innerHTML = '<span style="color:#1f7a52;"><i class="fas fa-spinner fa-pulse"></i> Sending message...</span>';
+    setTimeout(() => {
+      feedbackDiv.innerHTML = '<span style="color:#1d874f;">✅ Thank you, ' + name + '! Our team will reply within 24h. (Demo)</span>';
+      contactForm.reset();
+      setTimeout(() => {
+        feedbackDiv.innerHTML = '';
+      }, 4000);
+    }, 1000);
+  });
+
+  // FAQ accordion functionality
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const questionDiv = item.querySelector('.faq-question');
+    questionDiv.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+      faqItems.forEach(i => i.classList.remove('active'));
+      if (!isActive) item.classList.add('active');
+    });
+  });
+  // optional: open first faq slightly for better UX
+  if(faqItems.length) faqItems[0].classList.add('active');
+
+  // simple cart interaction simulation (consistent)
+  const cartIconBtn = document.querySelector('.cart-icon');
+  if(cartIconBtn) {
+    cartIconBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("🛍️ Your cart is ready — continue shopping on the Shop page!");
+    });
+  }
+
+  // tooltip style map: interactive placeholder (static but pleasant)
+  console.log("Contact page ready — Jules Animal Health");
+</script>
+<!-- The page uses white backgrounds, green highlights, aliceblue overall, and covers all contact essentials: form, details, map area, FAQ, footer -->
+</body>
+</html>

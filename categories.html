@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Jules Animal Health | Product Categories – Veterinary Solutions</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f8ff;  /* aliceblue core background */
+      color: #1a2c1c;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== NAVBAR (consistent green/white) ========== */
+    .navbar {
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0, 40, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 16px 24px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .logo h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #0f5c3f;
+      letter-spacing: -0.3px;
+    }
+
+    .logo p {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #2f7d4f;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1f3b2c;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #0f8b56;
+      border-bottom: 2px solid #0f8b56;
+      padding-bottom: 4px;
+    }
+
+    .cart-icon {
+      background: #eef5ea;
+      padding: 8px 14px;
+      border-radius: 40px;
+      position: relative;
+    }
+
+    /* categories hero section */
+    .categories-hero {
+      background: linear-gradient(115deg, #e0f3e8 0%, #ffffff 100%);
+      padding: 48px 0 40px;
+      border-bottom: 1px solid #cde0d3;
+    }
+
+    .hero-title {
+      font-size: 2.7rem;
+      font-weight: 800;
+      color: #0a4c35;
+    }
+
+    .hero-desc {
+      font-size: 1rem;
+      color: #3c6b53;
+      max-width: 650px;
+      margin-top: 12px;
+    }
+
+    /* category grid (main cards) */
+    .category-showcase {
+      padding: 60px 0 40px;
+    }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 32px;
+      margin: 30px 0;
+    }
+
+    .category-card {
+      background: white;
+      border-radius: 32px;
+      overflow: hidden;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.08);
+      transition: all 0.25s ease;
+      border: 1px solid #e2f0e6;
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 36px -14px rgba(20, 70, 40, 0.2);
+      border-color: #b0d6c2;
+    }
+
+    .category-img {
+      background: #eef6f0;
+      text-align: center;
+      padding: 32px 0;
+      font-size: 3.8rem;
+      color: #1a7450;
+    }
+
+    .category-info {
+      padding: 24px 22px 28px;
+      text-align: center;
+    }
+
+    .category-info h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #154f34;
+    }
+
+    .category-info p {
+      color: #5b7f68;
+      margin: 12px 0;
+      font-size: 0.9rem;
+    }
+
+    .product-count {
+      display: inline-block;
+      background: #e6f4ec;
+      padding: 4px 14px;
+      border-radius: 40px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #0f6e45;
+      margin-top: 10px;
+    }
+
+    /* featured products in each category (dynamic row) */
+    .featured-section {
+      background: white;
+      margin: 20px 0 60px;
+      border-radius: 2rem;
+      padding: 28px 24px;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      border: 1px solid #deecdf;
+    }
+
+    .featured-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+      border-left: 5px solid #1b8a5c;
+      padding-left: 18px;
+    }
+
+    .featured-header h2 {
+      font-size: 1.7rem;
+      color: #194e38;
+    }
+
+    .view-all-link {
+      color: #0f6e45;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .mini-products {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 25px;
+    }
+
+    .mini-product {
+      background: #fefef7;
+      border-radius: 24px;
+      padding: 16px;
+      transition: 0.2s;
+      border: 1px solid #eaf3ec;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .mini-product:hover {
+      background: #f6fef8;
+      border-color: #bcddcc;
+    }
+
+    .mini-icon {
+      font-size: 2rem;
+      color: #236e4a;
+      width: 50px;
+      text-align: center;
+    }
+
+    .mini-details h4 {
+      font-size: 1rem;
+      font-weight: 700;
+    }
+
+    .mini-price {
+      color: #0f6e45;
+      font-weight: 700;
+      font-size: 0.85rem;
+    }
+
+    /* footer */
+    .footer {
+      background: #0b3627;
+      color: #d9efdf;
+      padding: 48px 0 24px;
+      margin-top: 30px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 18px;
+    }
+
+    .footer-col a, .footer-col p {
+      color: #c8e0d1;
+      text-decoration: none;
+      line-height: 1.6;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #2b5c46;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 720px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      .mini-product {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- navigation bar (white) -->
+<div class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <h2><i class="fas fa-paw"></i> Jules Animal Health</h2>
+      <p>Quality drugs for healthy herds & pets</p>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="#" class="active">Categories</a>
+      <a href="about.html">About</a>
+      <a href="#">Contact</a>
+      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- categories hero -->
+<section class="categories-hero">
+  <div class="container">
+    <h1 class="hero-title">📚 Shop by Category</h1>
+    <p class="hero-desc">Browse our extensive range of veterinary drugs, supplements, and healthcare products — tailored for livestock, poultry, pets, and more. All products are vet-approved and sourced responsibly.</p>
+  </div>
+</section>
+
+<div class="container category-showcase">
+  <!-- main category cards (interactive) -->
+  <div class="category-grid" id="mainCategoryGrid">
+    <!-- categories will be injected via JS, but we build static backup -->
+  </div>
+
+  <!-- featured products area that updates when clicking on a category -->
+  <div id="featuredProductsArea" class="featured-section">
+    <div class="featured-header">
+      <h2 id="featuredCategoryTitle">✨ Featured: Antibiotics</h2>
+      <a href="#" class="view-all-link" id="viewAllLink">View all →</a>
+    </div>
+    <div id="featuredProductsList" class="mini-products">
+      <!-- dynamic content -->
+      <div style="grid-column:1/-1; text-align:center; padding:30px;">Select a category to see top products</div>
+    </div>
+  </div>
+</div>
+
+<!-- footer -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col"><h4>Jules Animal Health</h4><p><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p><p><i class="fas fa-phone"></i> +250 788 000 123</p><p><i class="fas fa-envelope"></i> care@julesanimalhealth.com</p></div>
+    <div class="footer-col"><h4>Categories</h4><a href="#" data-cat-link="antibiotics">💊 Antibiotics</a><a href="#" data-cat-link="dewormers">🐛 Dewormers</a><a href="#" data-cat-link="vitamins">🧪 Vitamins/Tonics</a><a href="#" data-cat-link="petcare">🐕 Pet Care</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="#">Shipping</a><a href="#">Returns</a><a href="#">Vet Consultation</a></div>
+    <div class="footer-col"><h4>Follow us</h4><i class="fab fa-facebook"></i> <i class="fab fa-instagram"></i> <i class="fab fa-whatsapp"></i><p>🐾 Healthy animals, happy farmers</p></div>
+  </div>
+  <div class="copyright"><p>© 2026 Jules Animal Health — Explore categories & veterinary solutions.</p></div>
+</footer>
+
+<script>
+  // comprehensive product database (matching shop context, with categories)
+  const productsDB = [
+    { id: 1, name: "Vetmox LA", category: "antibiotics", desc: "Long-acting antibiotic for cattle, goats, sheep.", price: 24.99, icon: "fas fa-cow", featured: true },
+    { id: 2, name: "NexGard Plus", category: "petcare", desc: "Flea, tick & worm protection for dogs.", price: 39.90, icon: "fas fa-dog", featured: true },
+    { id: 3, name: "Albendazole 10%", category: "dewormers", desc: "Oral dewormer for sheep, goats & cattle.", price: 18.50, icon: "fas fa-pills", featured: true },
+    { id: 4, name: "Oxytet LA", category: "antibiotics", desc: "Oxytetracycline injection for infections.", price: 21.30, icon: "fas fa-syringe", featured: true },
+    { id: 5, name: "Livomin Powder", category: "vitamins", desc: "Liver tonic + multivitamin for poultry.", price: 27.75, icon: "fas fa-heartbeat", featured: true },
+    { id: 6, name: "Revolution Plus", category: "petcare", desc: "Topical parasite prevention for cats.", price: 44.99, icon: "fas fa-cat", featured: true },
+    { id: 7, name: "Ivermectin 1%", category: "dewormers", desc: "Injectable dewormer for cattle/swine.", price: 15.99, icon: "fas fa-syringe", featured: false },
+    { id: 8, name: "Amprolium 20%", category: "antibiotics", desc: "Coccidiosis treatment for poultry.", price: 19.45, icon: "fas fa-egg", featured: true },
+    { id: 9, name: "Nutri-Gel", category: "vitamins", desc: "Energy & vitamin supplement for newborns.", price: 12.90, icon: "fas fa-capsules", featured: true },
+    { id: 10, name: "Fenbendazole Paste", category: "dewormers", desc: "Broad-spectrum dewormer for horses.", price: 28.70, icon: "fas fa-horse", featured: false },
+    { id: 11, name: "Pet Calm", category: "petcare", desc: "Anxiety relief chews for dogs & cats.", price: 22.30, icon: "fas fa-paw", featured: true },
+    { id: 12, name: "Liver Tonic Syrup", category: "vitamins", desc: "Supports liver function in cattle.", price: 14.25, icon: "fas fa-flask", featured: false },
+    { id: 13, name: "Mastitis Treatment", category: "antibiotics", desc: "Intramammary infusion for dairy cows.", price: 32.99, icon: "fas fa-tint", featured: false },
+    { id: 14, name: "Poultry Multivit", category: "vitamins", desc: "Water-soluble vitamins for poultry.", price: 9.99, icon: "fas fa-leaf", featured: true }
+  ];
+
+  // category definitions (metadata)
+  const categoriesMeta = [
+    { id: "antibiotics", name: "💊 Antibiotics", icon: "fas fa-capsules", count: 0, description: "Powerful infection control for livestock & poultry. Long-acting and broad-spectrum formulas." },
+    { id: "dewormers", name: "🐛 Dewormers & Antiparasitics", icon: "fas fa-bug", count: 0, description: "Effective parasite control for cattle, sheep, goats, and horses. Safeguard your herd's health." },
+    { id: "vitamins", name: "🧪 Vitamins & Tonics", icon: "fas fa-vial", count: 0, description: "Nutritional supplements to boost immunity, liver function, and overall vitality." },
+    { id: "petcare", name: "🐕 Pet Care & Wellness", icon: "fas fa-heart", count: 0, description: "Flea/tick prevention, anxiety relief, and premium health products for dogs & cats." }
+  ];
+
+  // compute product counts per category
+  function updateCounts() {
+    categoriesMeta.forEach(cat => {
+      cat.count = productsDB.filter(p => p.category === cat.id).length;
+    });
+  }
+  updateCounts();
+
+  // render main category cards dynamically
+  function renderCategoryCards() {
+    const container = document.getElementById('mainCategoryGrid');
+    if (!container) return;
+    container.innerHTML = categoriesMeta.map(cat => `
+      <div class="category-card" data-category-id="${cat.id}">
+        <div class="category-img"><i class="${cat.icon}"></i></div>
+        <div class="category-info">
+          <h3>${cat.name}</h3>
+          <p>${cat.description.substring(0, 85)}...</p>
+          <div class="product-count">📦 ${cat.count} products</div>
+        </div>
+      </div>
+    `).join('');
+
+    // attach event listeners to each category card
+    document.querySelectorAll('.category-card').forEach(card => {
+      card.addEventListener('click', (e) => {
+        const catId = card.getAttribute('data-category-id');
+        if (catId) loadFeaturedProducts(catId);
+      });
+    });
+  }
+
+  // load featured products for specific category (show up to 6 items, prioritize featured)
+  function loadFeaturedProducts(categoryId) {
+    const category = categoriesMeta.find(c => c.id === categoryId);
+    if (!category) return;
+    const categoryName = category.name;
+    document.getElementById('featuredCategoryTitle').innerHTML = `✨ Featured: ${categoryName}`;
+    const viewAllLink = document.getElementById('viewAllLink');
+    viewAllLink.href = `#`;  // in real scenario, could link to shop filtered by category
+    viewAllLink.setAttribute('data-category-filter', categoryId);
+    viewAllLink.onclick = (e) => {
+      e.preventDefault();
+      alert(`🔍 View all ${categoryName} products — in full shop page filtered by ${categoryId} (demo integration ready)`);
+      // Here you can redirect to shop.html?category=xxxx
+    };
+
+    let categoryProducts = productsDB.filter(p => p.category === categoryId);
+    // sort: featured first, then by price
+    categoryProducts.sort((a,b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+    const displayProducts = categoryProducts.slice(0, 6);
+    const featuredContainer = document.getElementById('featuredProductsList');
+    if (displayProducts.length === 0) {
+      featuredContainer.innerHTML = `<div style="grid-column:1/-1; text-align:center; padding:30px;">No products found in this category yet.</div>`;
+      return;
+    }
+    featuredContainer.innerHTML = displayProducts.map(prod => `
+      <div class="mini-product">
+        <div class="mini-icon"><i class="${prod.icon}"></i></div>
+        <div class="mini-details">
+          <h4>${prod.name}</h4>
+          <p style="font-size:0.75rem; color:#547a64;">${prod.desc.substring(0, 55)}</p>
+          <div class="mini-price">$${prod.price.toFixed(2)}</div>
+          <button class="quick-add" data-id="${prod.id}" data-name="${prod.name}" data-price="${prod.price}" style="margin-top: 6px; background:#eef3e9; border:none; border-radius:30px; padding:4px 10px; font-size:0.7rem; font-weight:600; cursor:pointer;">➕ Add to cart</button>
+        </div>
+      </div>
+    `).join('');
+
+    // attach event handlers for quick add buttons
+    document.querySelectorAll('.quick-add').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const id = parseInt(btn.getAttribute('data-id'));
+        const name = btn.getAttribute('data-name');
+        const price = parseFloat(btn.getAttribute('data-price'));
+        addToCartDemo(id, name, price);
+      });
+    });
+  }
+
+  // simple cart simulation with toast + localstorage (to persist minimal)
+  let cartItems = [];
+  function addToCartDemo(id, name, price) {
+    const existing = cartItems.find(item => item.id === id);
+    if (existing) {
+      existing.quantity += 1;
+    } else {
+      cartItems.push({ id, name, price, quantity: 1 });
+    }
+    saveCartToLocal();
+    showToast(`${name} added to cart 🛒`);
+    updateCartIconCount();
+  }
+
+  function showToast(msg) {
+    let toast = document.getElementById('dynamicToast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'dynamicToast';
+      toast.style.position = 'fixed';
+      toast.style.bottom = '25px';
+      toast.style.right = '25px';
+      toast.style.backgroundColor = '#0f6e45';
+      toast.style.color = 'white';
+      toast.style.padding = '12px 24px';
+      toast.style.borderRadius = '60px';
+      toast.style.fontWeight = '500';
+      toast.style.zIndex = '1100';
+      toast.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+      toast.style.opacity = '0';
+      toast.style.transition = '0.2s';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = msg;
+    toast.style.opacity = '1';
+    setTimeout(() => {
+      toast.style.opacity = '0';
+    }, 1800);
+  }
+
+  function saveCartToLocal() {
+    localStorage.setItem('julesCartCategories', JSON.stringify(cartItems));
+    updateCartIconCount();
+  }
+
+  function loadCartFromLocal() {
+    const saved = localStorage.getItem('julesCartCategories');
+    if (saved) {
+      try {
+        cartItems = JSON.parse(saved);
+      } catch(e) { cartItems = []; }
+    }
+    updateCartIconCount();
+  }
+
+  function updateCartIconCount() {
+    const total = cartItems.reduce((sum, i) => sum + i.quantity, 0);
+    const cartIcon = document.querySelector('.cart-icon');
+    if (cartIcon) {
+      let badge = cartIcon.querySelector('.cart-badge-count');
+      if (!badge) {
+        badge = document.createElement('span');
+        badge.className = 'cart-badge-count';
+        badge.style.background = '#1e784c';
+        badge.style.color = 'white';
+        badge.style.borderRadius = '30px';
+        badge.style.padding = '2px 8px';
+        badge.style.marginLeft = '6px';
+        badge.style.fontSize = '0.7rem';
+        cartIcon.appendChild(badge);
+      }
+      badge.innerText = total;
+    }
+  }
+
+  // load default category (antibiotics) when page loads
+  function initDefaultCategory() {
+    loadFeaturedProducts('antibiotics');
+  }
+
+  // also handle footer category links
+  function bindFooterLinks() {
+    const footerLinks = document.querySelectorAll('[data-cat-link]');
+    footerLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const cat = link.getAttribute('data-cat-link');
+        if (cat) loadFeaturedProducts(cat);
+        // scroll to featured section smoothly
+        document.getElementById('featuredProductsArea').scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  }
+
+  // additional hover effects and smooth scroll
+  window.addEventListener('DOMContentLoaded', () => {
+    renderCategoryCards();
+    loadCartFromLocal();
+    bindFooterLinks();
+    initDefaultCategory();
+  });
+</script>
+
+<!-- extra note: the categories page is fully self-contained, uses white/green/aliceblue, showcases animal drug categories -->
+</body>
+</html>

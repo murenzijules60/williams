@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Services | Williams Animal Health — Veterinary Pharmacy & Consultations</title>
+  <!-- Google Fonts + Font Awesome Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: #fefcf5;
+      color: #1e2f2c;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* Top banner */
+    .top-banner {
+      background: #1a3b2e;
+      color: #f9e7c2;
+      text-align: center;
+      padding: 0.65rem;
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+    .top-banner i {
+      margin: 0 6px;
+    }
+
+    /* Navigation */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 2rem;
+      background: white;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      flex-wrap: wrap;
+      position: sticky;
+      top: 0;
+      z-index: 99;
+    }
+    .logo-area h1 {
+      font-size: 1.8rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1b4d3a, #2c8c5a);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .logo-area p {
+      font-size: 0.7rem;
+      color: #5c7c66;
+    }
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #2c5a45;
+      transition: 0.2s;
+    }
+    .nav-links a:hover {
+      color: #1b7a4e;
+    }
+    .cart-icon {
+      background: #eef3e9;
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      cursor: pointer;
+      border: 1px solid #d5e6cf;
+    }
+    .cart-count {
+      background: #1b4d3a;
+      color: white;
+      border-radius: 40px;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.8rem;
+    }
+
+    /* Hero section */
+    .services-hero {
+      background: linear-gradient(115deg, #eef6ea 0%, #ffffff 70%);
+      padding: 3rem 2rem;
+      text-align: center;
+      border-radius: 0 0 2.5rem 2.5rem;
+      margin-bottom: 2rem;
+    }
+    .services-hero h1 {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #173e2f;
+    }
+    .services-hero .tagline {
+      font-size: 1.1rem;
+      color: #3f6a55;
+      max-width: 750px;
+      margin: 1rem auto 0;
+    }
+
+    /* Service Cards Grid */
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    .service-card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      transition: all 0.25s ease;
+      border: 1px solid #e0ecd9;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02);
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 30px -12px rgba(27, 77, 58, 0.15);
+      border-color: #cbe0c4;
+    }
+    .service-icon {
+      font-size: 2.8rem;
+      background: #eef4ea;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 1.5rem;
+      margin-bottom: 1.2rem;
+      color: #2c7a54;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: #1c4b38;
+    }
+    .service-card p {
+      color: #5b7c68;
+      line-height: 1.5;
+      margin-bottom: 1.2rem;
+    }
+    .service-feature {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    .service-feature li {
+      padding: 0.3rem 0;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .service-feature li i {
+      color: #2c8c5a;
+      font-size: 0.85rem;
+    }
+    .btn-service {
+      display: inline-block;
+      margin-top: 1rem;
+      background: transparent;
+      border: 1.5px solid #cde0c5;
+      padding: 0.5rem 1.2rem;
+      border-radius: 60px;
+      font-weight: 600;
+      color: #2c5a45;
+      cursor: pointer;
+      transition: 0.2s;
+      text-decoration: none;
+    }
+    .btn-service:hover {
+      background: #1b4d3a;
+      border-color: #1b4d3a;
+      color: white;
+    }
+
+    /* Specialty section (veterinary compounding etc) */
+    .specialty-section {
+      background: #eef5ea;
+      border-radius: 2rem;
+      padding: 2rem;
+      margin: 2rem 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      align-items: center;
+    }
+    .specialty-text {
+      flex: 1.2;
+    }
+    .specialty-text h2 {
+      font-size: 1.8rem;
+      color: #173e2f;
+    }
+    .specialty-badge {
+      background: white;
+      border-radius: 60px;
+      padding: 0.4rem 1rem;
+      display: inline-block;
+      font-weight: 600;
+      margin: 1rem 0;
+    }
+
+    /* CTA Consultation */
+    .consult-cta {
+      background: #ffffff;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      text-align: center;
+      margin: 2rem 0;
+      border: 1px solid #ddecd7;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.02);
+    }
+
+    footer {
+      background: #eef2ea;
+      padding: 2rem;
+      text-align: center;
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      border-radius: 2rem 2rem 0 0;
+    }
+
+    /* Cart Modal (consistent with other pages) */
+    .cart-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(6px);
+      visibility: hidden;
+      opacity: 0;
+      transition: 0.2s;
+      z-index: 1000;
+    }
+    .cart-sidebar {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 100%;
+      max-width: 440px;
+      height: 100%;
+      background: #ffffff;
+      box-shadow: -8px 0 30px rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+      z-index: 1001;
+    }
+    .cart-overlay.active {
+      visibility: visible;
+      opacity: 1;
+    }
+    .cart-sidebar.open {
+      transform: translateX(0);
+    }
+    .cart-header {
+      padding: 1.5rem;
+      border-bottom: 2px solid #eaf2e5;
+      display: flex;
+      justify-content: space-between;
+    }
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 1rem;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding-bottom: 0.8rem;
+      border-bottom: 1px solid #eef0ea;
+    }
+    .cart-total {
+      padding: 1.2rem;
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-top: 2px solid #e3ecd9;
+      background: #fefcf7;
+      display: flex;
+      justify-content: space-between;
+    }
+    .checkout-btn {
+      background: #1b4d3a;
+      color: white;
+      margin: 1rem;
+      padding: 0.9rem;
+      border-radius: 60px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+    }
+    .toast-msg {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1a372b;
+      color: #fbf5e8;
+      padding: 0.7rem 1.5rem;
+      border-radius: 50px;
+      z-index: 1100;
+      opacity: 0;
+      transition: 0.2s;
+      pointer-events: none;
+    }
+    @media (max-width: 780px) {
+      .navbar { flex-direction: column; gap: 1rem; }
+      .services-hero h1 { font-size: 2.2rem; }
+      .container { padding: 0 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-banner">
+  <i class="fas fa-stethoscope"></i> Full-service veterinary pharmacy • Compounding • Telehealth • Free shipping over $49
+</div>
+
+<nav class="navbar">
+  <div class="logo-area">
+    <h1><i class="fas fa-paw"></i> Williams Animal Health</h1>
+    <p>Science-backed care for every creature</p>
+  </div>
+  <div class="nav-links">
+    <a href="index.html" id="homeLink">🏠 Home</a>
+    <a href="about.html" id="aboutLink">📖 About</a>
+    <a href="services.html" id="servicesLink" style="color:#1b7a4e; font-weight:800;">⚕️ Services</a>
+    <a href="contact.html" id="contactLink">📞 Contact</a>
+    <div class="cart-icon" id="cartIcon">
+      <i class="fas fa-shopping-cart"></i> Cart
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Services Hero -->
+<section class="services-hero">
+  <div class="container">
+    <h1>Comprehensive veterinary services</h1>
+    <div class="tagline">From prescription fulfillment to expert consultations — we support veterinarians, farmers, and pet owners with trusted, science-based solutions.</div>
+  </div>
+</section>
+
+<div class="container">
+  <!-- Main Service Cards -->
+  <div class="service-grid">
+    <!-- 1. Online Pharmacy -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-prescription-bottle"></i></div>
+      <h3>Licensed Online Pharmacy</h3>
+      <p>FDA-approved & WHO-GMP certified animal drugs delivered to your doorstep. Fast, secure, and temperature-controlled shipping.</p>
+      <ul class="service-feature">
+        <li><i class="fas fa-check-circle"></i> 20,000+ products in stock</li>
+        <li><i class="fas fa-check-circle"></i> Auto-refill & subscription plans</li>
+        <li><i class="fas fa-check-circle"></i> Same-day dispatch before 2 PM</li>
+      </ul>
+      <a href="#" class="btn-service" id="shopNowBtn">Shop now →</a>
+    </div>
+
+    <!-- 2. Veterinary Telehealth -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-video"></i></div>
+      <h3>24/7 Telehealth Consultations</h3>
+      <p>Connect with licensed veterinarians via video or chat. Get prescription renewals, dosage advice, and second opinions — any time.</p>
+      <ul class="service-feature">
+        <li><i class="fas fa-check-circle"></i> Average response < 15 min</li>
+        <li><i class="fas fa-check-circle"></i> Prescription sent directly to our pharmacy</li>
+        <li><i class="fas fa-check-circle"></i> Flat $35 consultation fee</li>
+      </ul>
+      <a href="#" class="btn-service" id="telehealthBtn">Book consult →</a>
+    </div>
+
+    <!-- 3. Compounding Pharmacy -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-flask"></i></div>
+      <h3>Custom Compounding</h3>
+      <p>Customized dosage forms (liquids, chewables, transdermals) for animals with unique needs. Flavoring for picky eaters available.</p>
+      <ul class="service-feature">
+        <li><i class="fas fa-check-circle"></i> For dogs, cats, horses, birds, exotics</li>
+        <li><i class="fas fa-check-circle"></i> Allergen-free & special concentrations</li>
+        <li><i class="fas fa-check-circle"></i> Vet prescription required</li>
+      </ul>
+      <a href="#" class="btn-service" id="compoundBtn">Request compounding →</a>
+    </div>
+
+    <!-- 4. Prescription Management -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-file-prescription"></i></div>
+      <h3>Rx Management & Transfers</h3>
+      <p>We handle prescription transfers from your local vet. Refill reminders, medication synchronization, and compliance packaging.</p>
+      <ul class="service-feature">
+        <li><i class="fas fa-check-circle"></i> Easy transfer: just upload Rx</li>
+        <li><i class="fas fa-check-circle"></i> Automatic refill alerts</li>
+        <li><i class="fas fa-check-circle"></i> Multi-pet discounts</li>
+      </ul>
+      <a href="#" class="btn-service" id="rxManageBtn">Transfer prescription →</a>
+    </div>
+
+    <!-- 5. Farm & Livestock Support -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-tractor"></i></div>
+      <h3>Livestock Health Programs</h3>
+      <p>Bulk antibiotics, vaccines, dewormers, and supply management for cattle, swine, sheep, and poultry operations.</p>
+      <ul class="service-feature">
+        <li><i class="fas fa-check-circle"></i> Volume discounts & farm accounts</li>
+        <li><i class="fas fa-check-circle"></i> Veterinary herd health plans</li>
+        <li><i class="fas fa-check-circle"></i> Next-day delivery to rural areas</li>
+      </ul>
+      <a href="#" class="btn-service" id="farmBtn">Inquire about farm plan →</a>
+    </div>
+
+    <!-- 6. Emergency Drug Delivery -->
+    <div class="service-card">
+      <div class="service-icon"><i class="fas fa-ambulance"></i></div>
+      <h3>Emergency Same-Day Delivery</h3>
+      <p>Critical care medications delivered within hours in select metro areas. 24/7 emergency pharmacy hotline.</p>
+      <ul class="service-feature">
+        <li><i class="fas fa-check-circle"></i> Available in 35+ cities</li>
+        <li><i class="fas fa-check-circle"></i> After-hours vet coordination</li>
+        <li><i class="fas fa-check-circle"></i> No extra charge for members</li>
+      </ul>
+      <a href="#" class="btn-service" id="emergencyBtn">Check coverage →</a>
+    </div>
+  </div>
+
+  <div class="specialty-section">
+    <div class="specialty-text">
+      <span class="specialty-badge"><i class="fas fa-star-of-life"></i> PCAB Accredited</span>
+      <h2>Advanced veterinary compounding</h2>
+      <p>Our state-of-the-art compounding lab creates customized medications for hard-to-treat conditions: transdermal gels for cats, small-dose capsules for exotic birds, and palatable liquids for dogs. All compounds are third-party tested for potency and sterility.</p>
+      <p style="margin-top: 0.8rem;"><i class="fas fa-microscope"></i> <strong>Examples:</strong> Methimazole transdermal, potassium bromide suspensions, cyclosporine modified-release.</p>
+    </div>
+    <div style="flex:0.8; background:#ffffff; border-radius: 1.5rem; padding: 1rem; text-align: center;">
+      <i class="fas fa-capsules" style="font-size: 3.5rem; color:#2c7a54;"></i>
+      <p>Trusted by 1,200+ clinics</p>
+    </div>
+  </div>
+
+  <div class="consult-cta">
+    <i class="fas fa-calendar-check" style="font-size: 2rem; color: #2c8c5a;"></i>
+    <h3 style="margin: 0.5rem 0;">Need a personalized veterinary plan?</h3>
+    <p>Our team of licensed pharmacists and veterinarians is available Monday–Saturday to answer questions about drug interactions, dosing, and treatment protocols.</p>
+    <a href="#" id="consultBtn" style="display: inline-block; background: #1b4d3a; color: white; padding: 0.7rem 1.8rem; border-radius: 60px; text-decoration: none; font-weight: 600; margin-top: 1rem;">Schedule free consultation →</a>
+  </div>
+</div>
+
+<footer>
+  <p><i class="far fa-copyright"></i> 2025 Williams Animal Health — Trusted care for every creature.</p>
+  <p style="margin-top: 0.5rem;">📍 Licensed pharmacy | NABP-accredited | Veterinary oversight</p>
+</footer>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3><i class="fas fa-shopping-basket"></i> Your cart</h3>
+    <button class="close-cart" id="closeCartBtn" style="background:none; border:none; font-size: 1.8rem; cursor:pointer;">&times;</button>
+  </div>
+  <div class="cart-items" id="cartItemsList"><div style="padding:2rem; text-align:center;">🐾 Cart is empty</div></div>
+  <div class="cart-total" id="cartTotalPrice">Total: $0.00</div>
+  <button class="checkout-btn" id="checkoutBtn"><i class="fas fa-lock"></i> Secure checkout</button>
+</div>
+<div class="toast-msg" id="toastMsg"></div>
+
+<!-- <script>
+  // ---------- PRODUCTS (same as home for consistent cart) ----------
+  const products = [
+    { id: 1, name: "Amoxi-Care 500", price: 28.99, rx: true },
+    { id: 2, name: "Ivermax Pour-On", price: 42.50, rx: false },
+    { id: 3, name: "Meloxicam Vet", price: 34.75, rx: true },
+    { id: 4, name: "Doxy 100", price: 31.20, rx: true },
+    { id: 5, name: "Safe-Guard Granules", price: 39.90, rx: false },
+    { id: 6, name: "Baytril 136mg", price: 47.30, rx: true },
+    { id: 7, name: "Draxxin KP", price: 69.99, rx: true },
+    { id: 8, name: "Revolution Plus", price: 62.99, rx: true }
+  ];
+
+  let cart = [];
+
+  function saveCart() {
+    localStorage.setItem("williams_cart_v2", JSON.stringify(cart));
+    renderCartUI();
+    updateCartBadge();
+  }
+
+  function loadCart() {
+    const stored = localStorage.getItem("williams_cart_v2");
+    if(stored) {
+      try { cart = JSON.parse(stored); if(!Array.isArray(cart)) cart=[]; } catch(e){cart=[];}
+    } else cart = [];
+    renderCartUI();
+    updateCartBadge();
+  }
+
+  function updateCartBadge() {
+    const total = cart.reduce((sum,i)=> sum + i.qty, 0);
+    const badge = document.getElementById("cartCount");
+    if(badge) badge.innerText = total;
+  }
+
+  function renderCartUI() {
+    const cartContainer = document.getElementById("cartItemsList");
+    if(!cartContainer) return;
+    if(cart.length === 0) {
+      cartContainer.innerHTML = `<div style="text-align:center; padding:2rem; color:#7e9a7a;"><i class="fas fa-heart-broken"></i> No items yet</div>`;
+      const totalEl = document.getElementById("cartTotalPrice");
+      if(totalEl) totalEl.innerHTML = `Total: $0.00`;
+      return;
+    }
+    let html = "";
+    let total = 0;
+    cart.forEach((item) => {
+      const itemTotal = item.price * item.qty;
+      total += itemTotal;
+      html += `
+        <div class="cart-item">
+          <div>
+            <strong>${escapeHtml(item.name)}</strong><br>
+            <div style="display:flex; gap:8px; margin-top:6px;">
+              <button class="qty-dec" data-id="${item.id}" style="background:#eef2ea; border:none; width:28px; border-radius:30px;">−</button>
+              <span>${item.qty}</span>
+              <button class="qty-inc" data-id="${item.id}" style="background:#eef2ea; border:none; width:28px; border-radius:30px;">+</button>
+              <button class="cart-remove" data-id="${item.id}" style="background:#ffe0dd; border:none; border-radius:30px; padding:0 12px;">🗑️</button>
+            </div>
+          </div>
+          <div style="font-weight:700;">$${itemTotal.toFixed(2)}</div>
+        </div>
+      `;
+    });
+    cartContainer.innerHTML = html;
+    const totalElem = document.getElementById("cartTotalPrice");
+    if(totalElem) totalElem.innerHTML = `Total: $${total.toFixed(2)}`;
+
+    document.querySelectorAll(".qty-inc").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const id = parseInt(btn.getAttribute("data-id"));
+        updateQty(id, 1);
+      });
+    });
+    document.querySelectorAll(".qty-dec").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const id = parseInt(btn.getAttribute("data-id"));
+        updateQty(id, -1);
+      });
+    });
+    document.querySelectorAll(".cart-remove").forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        const id = parseInt(btn.getAttribute("data-id"));
+        removeItemFully(id);
+      });
+    });
+  }
+
+  function updateQty(id, delta) {
+    const idx = cart.findIndex(i => i.id === id);
+    if(idx !== -1) {
+      const newQty = cart[idx].qty + delta;
+      if(newQty <= 0) cart.splice(idx,1);
+      else cart[idx].qty = newQty;
+      saveCart();
+      showToast(delta===1 ? "Quantity increased" : "Quantity decreased");
+    }
+  }
+
+  function removeItemFully(id) {
+    cart = cart.filter(i => i.id !== id);
+    saveCart();
+    showToast("Item removed");
+  }
+
+  function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if(!product) return;
+    const existing = cart.find(i => i.id === productId);
+    if(existing) {
+      existing.qty += 1;
+    } else {
+      cart.push({ id: product.id, name: product.name, price: product.price, qty: 1, rx: product.rx });
+    }
+    saveCart();
+    showToast(`✅ ${product.name} added to cart`);
+  }
+
+  function showToast(msg) {
+    const toast = document.getElementById("toastMsg");
+    toast.innerText = msg;
+    toast.style.opacity = "1";
+    setTimeout(() => toast.style.opacity = "0", 1800);
+  }
+
+  function escapeHtml(str) {
+    return str.replace(/[&<>]/g, function(m){
+      if(m === '&') return '&amp;';
+      if(m === '<') return '&lt;';
+      if(m === '>') return '&gt;';
+      return m;
+    });
+  }
+
+  // Cart UI Handlers
+  function openCart() {
+    document.getElementById("cartOverlay").classList.add("active");
+    document.getElementById("cartSidebar").classList.add("open");
+    renderCartUI();
+  }
+  function closeCart() {
+    document.getElementById("cartOverlay").classList.remove("active");
+    document.getElementById("cartSidebar").classList.remove("open");
+  }
+  function handleCheckout() {
+    if(cart.length === 0) { showToast("Cart is empty"); return; }
+    const total = cart.reduce((sum,i)=> sum+(i.price*i.qty),0);
+    const hasRx = cart.some(i=> i.rx===true);
+    let msg = `📦 Williams Order\nTotal: $${total.toFixed(2)}\n`;
+    if(hasRx) msg += "⚠️ Prescription verification needed.\n";
+    if(confirm(msg+"\nProceed with order?")) {
+      alert("🎉 Order placed! Thank you for trusting Williams Animal Health.");
+      cart = [];
+      saveCart();
+      closeCart();
+      showToast("Order placed successfully!");
+    }
+  }
+
+  // Navigation simulation
+  function goToHome() { window.location.href = "#"; alert("🏠 Home page (full website would load home)."); }
+  function goToAbout() { window.location.href = "#"; alert("📖 About page - Learn our story."); }
+  function goToServices() { alert("⚕️ You are already on the Services page."); }
+  function goToContact() { window.location.href = "#"; alert("📞 Contact page: reach our support team."); }
+
+  // Service button interactions (demo)
+  document.getElementById("shopNowBtn")?.addEventListener("click", (e) => { e.preventDefault(); alert("🛒 Browse our full pharmacy catalog: over 8,000 veterinary products available for fast delivery."); });
+  document.getElementById("telehealthBtn")?.addEventListener("click", (e) => { e.preventDefault(); alert("📞 Telehealth consultation: Connect with a licensed vet within 15 minutes. Flat $35 fee. Schedule now."); });
+  document.getElementById("compoundBtn")?.addEventListener("click", (e) => { e.preventDefault(); alert("🧪 Compounding request: Our pharmacists will contact you within 1 hour to discuss custom medication needs."); });
+  document.getElementById("rxManageBtn")?.addEventListener("click", (e) => { e.preventDefault(); alert("📋 Prescription transfer: Email your current Rx to rx@williamsanimalhealth.com or upload via client portal."); });
+  document.getElementById("farmBtn")?.addEventListener("click", (e) => { e.preventDefault(); alert("🚜 Farm & livestock program: Request volume pricing and herd health consultation."); });
+  document.getElementById("emergencyBtn")?.addEventListener("click", (e) => { e.preventDefault(); alert("🚑 Emergency delivery: Available in major cities. Call 1-888-555-1234 for immediate help."); });
+  document.getElementById("consultBtn")?.addEventListener("click", (e) => { e.preventDefault(); alert("📅 Free consultation: A veterinary specialist will call you within 24h to discuss your animal's needs."); });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    loadCart();
+    document.getElementById("cartIcon").addEventListener("click", openCart);
+    document.getElementById("closeCartBtn").addEventListener("click", closeCart);
+    document.getElementById("cartOverlay").addEventListener("click", closeCart);
+    document.getElementById("checkoutBtn").addEventListener("click", handleCheckout);
+    document.getElementById("homeLink").addEventListener("click", (e) => { e.preventDefault(); goToHome(); });
+    document.getElementById("aboutLink").addEventListener("click", (e) => { e.preventDefault(); goToAbout(); });
+    document.getElementById("servicesLink").addEventListener("click", (e) => { e.preventDefault(); goToServices(); });
+    document.getElementById("contactLink").addEventListener("click", (e) => { e.preventDefault(); goToContact(); });
+  });
+</script> -->
+</body>
+</html>

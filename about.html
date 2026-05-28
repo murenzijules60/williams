@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Jules Animal Health | About Us – Our Story & Mission</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f0f8ff;  /* aliceblue background */
+      color: #1a2c1c;
+      line-height: 1.4;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========== NAVBAR (white with green accents) ========== */
+    .navbar {
+      background-color: white;
+      box-shadow: 0 8px 20px rgba(0, 40, 0, 0.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 16px 24px;
+      max-width: 1320px;
+      margin: 0 auto;
+    }
+
+    .logo h2 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #0f5c3f;
+      letter-spacing: -0.3px;
+    }
+
+    .logo p {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: #2f7d4f;
+      margin-top: 2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #1f3b2c;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #0f8b56;
+      border-bottom: 2px solid #0f8b56;
+      padding-bottom: 4px;
+    }
+
+    /* about hero section (green gradient + white) */
+    .about-hero {
+      background: linear-gradient(125deg, #e6f4ec 0%, #ffffff 100%);
+      padding: 60px 0 48px;
+      border-bottom: 1px solid #cde2d4;
+    }
+
+    .about-title {
+      font-size: 3rem;
+      font-weight: 800;
+      color: #0a4c35;
+      margin-bottom: 16px;
+    }
+
+    .about-sub {
+      font-size: 1.1rem;
+      color: #3c6b53;
+      max-width: 700px;
+      line-height: 1.5;
+    }
+
+    /* mission & story grid */
+    .story-section {
+      padding: 70px 0 40px;
+    }
+
+    .mission-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 70px;
+    }
+
+    .mission-text {
+      flex: 1.2;
+    }
+
+    .mission-text h3 {
+      font-size: 1.9rem;
+      font-weight: 700;
+      color: #154f34;
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+
+    .mission-text h3:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 70px;
+      height: 3px;
+      background: #2b8b62;
+      border-radius: 4px;
+    }
+
+    .mission-text p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #2c4b3a;
+      margin: 24px 0 16px;
+    }
+
+    .mission-stats {
+      display: flex;
+      gap: 28px;
+      margin-top: 28px;
+      flex-wrap: wrap;
+    }
+
+    .stat-item {
+      background: white;
+      border-radius: 28px;
+      padding: 18px 22px;
+      text-align: center;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+      border: 1px solid #deecdf;
+      min-width: 120px;
+    }
+
+    .stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #1e784c;
+    }
+
+    .mission-image {
+      flex: 0.9;
+      background: white;
+      border-radius: 36px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 20px 32px -12px rgba(0, 0, 0, 0.08);
+      border: 1px solid #dcebd9;
+    }
+
+    .mission-image i {
+      font-size: 5rem;
+      color: #28855e;
+      margin: 10px;
+    }
+
+    /* core values cards (white cards, green accents) */
+    .values-section {
+      background: white;
+      border-radius: 2rem;
+      padding: 48px 32px;
+      margin: 40px 0;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+      border: 1px solid #e2f0e6;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      color: #154f34;
+      font-weight: 700;
+    }
+
+    .section-header p {
+      color: #5f846e;
+      max-width: 600px;
+      margin: 10px auto 0;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
+
+    .value-card {
+      background: #fafefb;
+      padding: 28px 20px;
+      border-radius: 28px;
+      text-align: center;
+      transition: 0.2s;
+      border: 1px solid #e3f0e7;
+    }
+
+    .value-card:hover {
+      transform: translateY(-6px);
+      border-color: #b2d9c4;
+      box-shadow: 0 20px 28px -14px rgba(0,0,0,0.05);
+    }
+
+    .value-icon {
+      background: #e5f4ec;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      margin: 0 auto 20px;
+    }
+
+    .value-icon i {
+      font-size: 2rem;
+      color: #1c7b52;
+    }
+
+    .value-card h3 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: #194e38;
+    }
+
+    /* team / leadership */
+    .team-section {
+      margin: 60px 0 40px;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 32px;
+      margin-top: 32px;
+    }
+
+    .team-card {
+      background: white;
+      border-radius: 28px;
+      overflow: hidden;
+      text-align: center;
+      padding: 28px 20px 24px;
+      box-shadow: 0 12px 20px -8px rgba(0,0,0,0.05);
+      border: 1px solid #e2efdf;
+    }
+
+    .team-avatar {
+      background: #eef4e9;
+      width: 110px;
+      height: 110px;
+      border-radius: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 18px;
+    }
+
+    .team-avatar i {
+      font-size: 3rem;
+      color: #1f7b53;
+    }
+
+    .team-card h4 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #154f34;
+    }
+
+    .team-role {
+      color: #558067;
+      font-weight: 500;
+      font-size: 0.8rem;
+      margin: 6px 0 10px;
+    }
+
+    /* testimonial / trust */
+    .trust-banner {
+      background: #0b2b26;
+      border-radius: 2rem;
+      padding: 48px 36px;
+      margin: 50px 0;
+      color: white;
+      text-align: center;
+    }
+
+    .trust-banner h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .trust-stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 20px;
+    }
+
+    .trust-item {
+      font-size: 1rem;
+    }
+
+    .trust-number {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #c3f0db;
+    }
+
+    /* footer */
+    .footer {
+      background: #0b3627;
+      color: #d9efdf;
+      padding: 48px 0 24px;
+      margin-top: 30px;
+    }
+
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .footer-col h4 {
+      color: white;
+      margin-bottom: 18px;
+    }
+
+    .footer-col a, .footer-col p {
+      color: #c8e0d1;
+      text-decoration: none;
+      line-height: 1.6;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .social-icons i {
+      font-size: 1.3rem;
+      margin-right: 14px;
+      transition: 0.2s;
+      color: #e2f0e6;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #2b5c46;
+      font-size: 0.8rem;
+    }
+
+    @media (max-width: 780px) {
+      .about-title {
+        font-size: 2.2rem;
+      }
+      .mission-grid {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- navigation (consistent with green/white/aliceblue) -->
+<div class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <h2><i class="fas fa-paw"></i> Jules Animal Health</h2>
+      <p>Quality drugs for healthy herds & pets</p>
+    </div>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="shop.html">Shop</a>
+      <a href="categories.html">Categories</a>
+      <a href="#" class="active">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="#" class="cart-icon"><i class="fas fa-shopping-cart"></i> Cart</a>
+    </div>
+  </div>
+</div>
+
+<!-- about hero -->
+<section class="about-hero">
+  <div class="container">
+    <h1 class="about-title">🐾 About Jules Animal Health</h1>
+    <p class="about-sub">Dedicated to the well-being of every animal, from livestock to beloved pets. We combine veterinary expertise with compassionate care to deliver premium animal health solutions across East Africa and beyond.</p>
+  </div>
+</section>
+
+<div class="container story-section">
+  <!-- mission & story block -->
+  <div class="mission-grid">
+    <div class="mission-text">
+      <h3>Our mission</h3>
+      <p>At Jules Animal Health, we believe that healthy animals create thriving communities. Founded in 2018 by veterinary pharmacist Jules Murenzi, our company was born from a vision: to provide farmers, veterinarians, and pet owners with reliable, safe, and affordable veterinary drugs & supplements. We bridge the gap between modern veterinary science and everyday animal care.</p>
+      <p>Today, we serve over 500+ livestock farms, veterinary clinics, and individual pet owners. Every product in our catalog is sourced from GMP-certified manufacturers and vetted by licensed professionals to ensure efficacy, safety, and compliance.</p>
+      <div class="mission-stats">
+        <div class="stat-item"><div class="stat-number">500+</div><div>Partner farms</div></div>
+        <div class="stat-item"><div class="stat-number">50+</div><div>Vet clinics</div></div>
+        <div class="stat-item"><div class="stat-number">24/7</div><div>Expert support</div></div>
+      </div>
+    </div>
+    <div class="mission-image">
+      <i class="fas fa-clinic-medical"></i>
+      <i class="fas fa-cow" style="margin-left: 15px;"></i>
+      <i class="fas fa-dog" style="margin-left: 15px;"></i>
+      <p style="margin-top: 20px; font-weight: 500; color:#1d6a48;">🐕‍🦺 Certified & Ethical animal care</p>
+    </div>
+  </div>
+
+  <!-- core values (white cards, green accents) -->
+  <div class="values-section">
+    <div class="section-header">
+      <h2>Our core values</h2>
+      <p>Integrity, innovation, and animal welfare drive everything we do.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card"><div class="value-icon"><i class="fas fa-shield-alt"></i></div><h3>Trust & Safety</h3><p>All products are vet-approved, traceable, and stored under strict quality controls.</p></div>
+      <div class="value-card"><div class="value-icon"><i class="fas fa-leaf"></i></div><h3>Sustainability</h3><p>Promoting responsible animal husbandry and eco-friendly packaging.</p></div>
+      <div class="value-card"><div class="value-icon"><i class="fas fa-hand-holding-heart"></i></div><h3>Compassion</h3><p>We treat every animal with the same care we would want for our own.</p></div>
+      <div class="value-card"><div class="value-icon"><i class="fas fa-chalkboard-user"></i></div><h3>Education</h3><p>Empowering farmers & pet owners with knowledge about proper animal healthcare.</p></div>
+    </div>
+  </div>
+
+  <!-- leadership / team -->
+  <div class="team-section">
+    <div class="section-header">
+      <h2>Meet the experts behind Jules</h2>
+      <p>Passionate veterinarians, pharmacists, and animal lovers.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-avatar"><i class="fas fa-user-md"></i></div>
+        <h4>Jules Murenzi</h4>
+        <div class="team-role">Founder & Lead Veterinary Pharmacist</div>
+        <p style="font-size:0.85rem; margin-top: 10px;">Certified animal health specialist with 12+ years of experience in veterinary pharmaceuticals.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><i class="fas fa-stethoscope"></i></div>
+        <h4>Dr. Grace Uwera</h4>
+        <div class="team-role">Head of Veterinary Affairs</div>
+        <p style="font-size:0.85rem; margin-top: 10px;">DVM, livestock disease prevention & herd health management expert.</p>
+      </div>
+      <div class="team-card">
+        <div class="team-avatar"><i class="fas fa-chart-line"></i></div>
+        <h4>Eric Ndayishimiye</h4>
+        <div class="team-role">Supply Chain Director</div>
+        <p style="font-size:0.85rem; margin-top: 10px;">Ensures fast, reliable delivery of genuine veterinary products across the region.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- trust banner (green solid) -->
+  <div class="trust-banner">
+    <h3>🐄 Our impact in numbers</h3>
+    <div class="trust-stats">
+      <div class="trust-item"><span class="trust-number">10,000+</span><br>Animals treated</div>
+      <div class="trust-item"><span class="trust-number">98%</span><br>Customer satisfaction</div>
+      <div class="trust-item"><span class="trust-number">24h</span><br>Delivery guarantee</div>
+      <div class="trust-item"><span class="trust-number">100%</span><br>Authentic products</div>
+    </div>
+    <p style="margin-top: 28px; opacity: 0.9;">Proud partner of Rwanda Veterinary Association & regional farmers' cooperatives.</p>
+  </div>
+
+  <!-- commitment / why choose us -->
+  <div style="background: white; border-radius: 2rem; padding: 40px 36px; margin: 30px 0 20px; border: 1px solid #ddecdd;">
+    <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: center;">
+      <div style="flex:1.2">
+        <h3 style="font-size: 1.8rem; color:#154f34;">Why choose Jules Animal Health?</h3>
+        <ul style="margin-top: 20px; list-style: none;">
+          <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="color:#1f8a5a; margin-right: 12px;"></i> <strong>Vet-approved sourcing</strong> – Only from trusted, certified manufacturers.</li>
+          <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="color:#1f8a5a; margin-right: 12px;"></i> <strong>Affordable & transparent pricing</strong> – No hidden fees, bulk discounts available.</li>
+          <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="color:#1f8a5a; margin-right: 12px;"></i> <strong>Expert consultation</strong> – Free guidance from licensed vets on product usage.</li>
+          <li style="margin-bottom: 14px;"><i class="fas fa-check-circle" style="color:#1f8a5a; margin-right: 12px;"></i> <strong>Fast delivery nationwide</strong> – Secure冷链 packaging for sensitive drugs.</li>
+        </ul>
+      </div>
+      <div style="flex:0.8; text-align: center;"><i class="fas fa-medal" style="font-size: 4rem; color:#206d4b;"></i><p style="font-weight:500; margin-top: 8px;">Rwanda's trusted animal health partner</p></div>
+    </div>
+  </div>
+</div>
+
+<!-- footer (green theme) -->
+<footer class="footer">
+  <div class="container footer-grid">
+    <div class="footer-col">
+      <h4>Jules Animal Health</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Kigali, Rwanda</p>
+      <p><i class="fas fa-phone"></i> +250 788 000 123</p>
+      <p><i class="fas fa-envelope"></i> hello@julesanimalhealth.com</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick links</h4>
+      <a href="#">About us</a>
+      <a href="#">Shop</a>
+      <a href="#">Categories</a>
+      <a href="#">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <a href="#">Animal health blog</a>
+      <a href="#">Vet advice</a>
+      <a href="#">Bulk order inquiry</a>
+    </div>
+    <div class="footer-col">
+      <h4>Follow our journey</h4>
+      <div class="social-icons">
+        <i class="fab fa-facebook"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-whatsapp"></i>
+      </div>
+      <p style="margin-top: 12px;">🐾 Healthy animals, happy farmers</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2026 Jules Animal Health — Compassion, quality, and integrity for every creature.</p>
+  </div>
+</footer>
+
+<!-- simple toast for interactive cart demo (consistency) -->
+<script>
+  // optional lightweight cart simulation for demo interaction (consistent feel)
+  let cartDemo = [];
+  function addToCartDemoSimple(name) {
+    let toast = document.getElementById('aboutToast');
+    if(!toast) {
+      toast = document.createElement('div');
+      toast.id = 'aboutToast';
+      toast.style.position = 'fixed';
+      toast.style.bottom = '25px';
+      toast.style.right = '25px';
+      toast.style.backgroundColor = '#0f6e45';
+      toast.style.color = 'white';
+      toast.style.padding = '12px 24px';
+      toast.style.borderRadius = '60px';
+      toast.style.fontWeight = '500';
+      toast.style.zIndex = '1100';
+      toast.style.opacity = '0';
+      toast.style.transition = '0.2s';
+      document.body.appendChild(toast);
+    }
+    toast.innerHTML = `🛒 ${name} added to cart (demo)`;
+    toast.style.opacity = '1';
+    setTimeout(() => toast.style.opacity = '0', 1800);
+  }
+
+  // attach any add to cart behavior on potential product buttons (though about page doesn't have many, but some future)
+  document.querySelectorAll('.quick-add-demo').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const pname = btn.getAttribute('data-name') || 'product';
+      addToCartDemoSimple(pname);
+    });
+  });
+  // cart icon badge message
+  const cartIcon = document.querySelector('.cart-icon');
+  if(cartIcon) {
+    cartIcon.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert("🛍️ Shopping cart ready — continue to shop page for full experience.");
+    });
+  }
+</script>
+
+<!-- This page fully aligns with the theme: white backgrounds, green accents, aliceblue overall tone.
+     It presents the company story, mission, values, team, and trust factors for Jules Animal Health. -->
+</body>
+</html>
